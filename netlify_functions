@@ -1,0 +1,76 @@
+/*
+ * DashVu waitlist: front-end snippet
+ *
+ * Listens for clicks on #my-cta-button, reads the email from #my-cta-email,
+ * and sends it to the DashVu Netlify Function (/.netlify/functions/waitlist),
+ * which adds the contact to Omnisend as an email subscriber.
+ *
+ * Expected markup:
+ *   <input id="my-cta-email" type="email" placeholder="you@example.com" autocomplete="email">
+ *   <input id="my-cta-company" type="text" tabindex="-1" autocomplete="off" hidden>  <!-- spam trap, leave empty -->
+ *   <button id="my-cta-button" type="button">Join Waitlist</button>
+ *   <p id="my-cta-message" role="status" aria-live="polite"></p>
+ *
+ * Include before </body>:
+ *   <script src="waitlist.js" defer></script>
+ */
+(function () {
+  var button = document.getElementById("my-cta-button");
+  var emailInput = document.getElementById("my-cta-email");
+  var trap = document.getElementById("my-cta-company");
+  var message = document.getElementById("my-cta-message");
+  if (!button || !emailInput) return;
+
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var label = button.textContent;
+
+  function say(text, ok) {
+    if (!message) return;
+    message.textContent = text;
+    message.style.color = ok ? "#00D4FF" : "#FF8A8A";
+  }
+
+  button.addEventListener("click", async function () {
+    var email = emailInput.value.trim().toLowerCase();
+
+    if (!EMAIL_RE.test(email)) {
+      say("Please enter a valid email address.", false);
+      emailInput.focus();
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = "Joining…";
+    say("", true);
+
+    try {
+      var res = await fetch("/.netlify/functions/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          company: trap ? trap.value : "" // spam trap: real visitors leave this empty
+        })
+      });
+
+      if (!res.ok) throw new Error("Request failed: " + res.status);
+
+      emailInput.value = "";
+      button.textContent = "You're on the list";
+      say("Thanks for joining. We'll be in touch soon.", true);
+    } catch (err) {
+      console.error(err);
+      button.disabled = false;
+      button.textContent = label;
+      say("Something went wrong. Please try again.", false);
+    }
+  });
+
+  // Let visitors press Enter in the email field
+  emailInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      button.click();
+    }
+  });
+})();
