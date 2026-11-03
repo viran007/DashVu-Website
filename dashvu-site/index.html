@@ -153,6 +153,13 @@
       0 4px 12px rgba(0, 224, 255, 0.35);
   }
   .cta:active { transform: translateY(0) scale(0.99); }
+
+  /* Keyboard focus indicator */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--electric);
+    outline-offset: 3px;
+  }
   a.cta, a.price-cta { text-decoration: none; text-align: center; }
 
 
@@ -1338,7 +1345,7 @@
 
     <div class="footer-bottom">
       <span>&copy; 2026 DashVu. All rights reserved.</span>
-      <a href="#">Privacy Policy</a>
+      <a href="/privacy/">Privacy Policy</a>
     </div>
 
   </div>
