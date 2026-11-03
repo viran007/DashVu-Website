@@ -1,0 +1,80 @@
+/*
+ * DashVu waitlist: Netlify Function (runs on the server, not in the browser)
+ *
+ * Receives an email from waitlist.js and creates or updates the contact in
+ * Omnisend with email status "subscribed", plus a consent record.
+ *
+ * Setup: in Netlify, go to Site configuration > Environment variables and add
+ *   OMNISEND_API_KEY = your Omnisend API key (Omnisend > Store settings > API keys)
+ * Never put the API key in front-end code.
+ */
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+const json = (status, body) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: { "Content-Type": "application/json" }
+  });
+
+export default async (req, context) => {
+  if (req.method !== "POST") return json(405, { error: "Method not allowed" });
+
+  let data;
+  try {
+    data = await req.json();
+  } catch {
+    return json(400, { error: "Invalid request" });
+  }
+
+  // Spam trap filled in: pretend success, send nothing
+  if (data.company) return json(200, { ok: true });
+
+  const email = String(data.email || "").trim().toLowerCase();
+  if (!EMAIL_RE.test(email) || email.length > 254) {
+    return json(400, { error: "Invalid email" });
+  }
+
+  const apiKey = process.env.OMNISEND_API_KEY;
+  if (!apiKey) {
+    console.error("OMNISEND_API_KEY is not set");
+    return json(500, { error: "Server not configured" });
+  }
+
+  const now = new Date().toISOString();
+
+  const res = await fetch("https://api.omnisend.com/api/contacts", {
+    method: "POST",
+    headers: {
+      Authorization: `Omnisend-API-Key ${apiKey}`,
+      "Omnisend-Version": "2026-03-15",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      tags: ["dashvu-waitlist"],
+      identifiers: [
+        {
+          type: "email",
+          id: email,
+          channels: {
+            email: { status: "subscribed", statusChangedAt: now }
+          },
+          consent: {
+            source: "dashvu-website-waitlist",
+            createdAt: now,
+            ip: context.ip || "",
+            userAgent: req.headers.get("user-agent") || ""
+          }
+        }
+      ]
+    })
+  });
+
+  if (!res.ok) {
+    // Log status only, never the email or API key
+    console.error("Omnisend error", res.status);
+    return json(502, { error: "Could not subscribe" });
+  }
+
+  return json(200, { ok: true });
+};
