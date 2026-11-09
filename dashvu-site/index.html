@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 48px 24px 96px;
+    padding: 112px 24px 96px;
     background:
       radial-gradient(ellipse 80% 55% at 50% -12%, rgba(0, 212, 255, 0.14), transparent 65%),
       radial-gradient(ellipse 60% 45% at 50% 118%, rgba(0, 110, 255, 0.10), transparent 70%),
@@ -124,7 +124,22 @@
     font-weight: 400;
     color: var(--text-secondary);
     letter-spacing: -0.01em;
-    margin-bottom: 48px;
+    margin-bottom: 20px;
+  }
+
+  /* Supporting sentence: one step down from the subheadline */
+  .sub-support-name {
+    font-weight: 600;
+  }
+
+  .sub-support {
+    max-width: 580px;
+    font-size: clamp(15px, 1.6vw, 17px);
+    line-height: 1.6;
+    font-weight: 400;
+    color: rgba(214, 224, 245, 0.6);
+    letter-spacing: -0.005em;
+    margin-bottom: 44px;
   }
 
   .cta {
@@ -166,7 +181,7 @@
   .cta-note {
     margin-top: 20px;
     font-size: 13.5px;
-    color: rgba(214, 224, 245, 0.42);
+    color: rgba(214, 224, 245, 0.56);
     letter-spacing: 0.01em;
   }
 
@@ -192,6 +207,7 @@
   @media (max-width: 600px) {
     .hero { padding-top: 96px; }
     .cta { width: 100%; max-width: 340px; }
+    .hero .cta { padding-left: 24px; padding-right: 24px; }
   }
 
   /* ---------- Problem / Solution ---------- */
@@ -931,6 +947,14 @@
     margin-bottom: 20px;
   }
 
+  .how-header p {
+    font-size: clamp(16.5px, 1.8vw, 19px);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin: 18px auto 0;
+  }
+
   .how-header h2 {
     font-size: clamp(30px, 4.4vw, 48px);
     font-weight: 700;
@@ -983,6 +1007,15 @@
     margin-bottom: 28px;
   }
 
+  .step-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 8px;
+  }
+
   .how-step h3 {
     font-size: 20px;
     font-weight: 600;
@@ -1002,15 +1035,15 @@
   @media (max-width: 760px) {
     .how-section { padding: 96px 24px 112px; }
     .how-header { margin-bottom: 56px; }
-    .how-steps { grid-template-columns: 1fr; gap: 48px; }
-    .how-steps::before {
-      top: 34px;
-      bottom: 34px;
-      left: 50%;
-      right: auto;
+    .how-steps { grid-template-columns: 1fr; gap: 20px; }
+    .how-steps::before { display: none; }
+    .how-step:not(:last-child)::after {
+      content: "";
+      display: block;
       width: 1px;
-      height: auto;
-      background: linear-gradient(180deg, transparent, var(--electric-dim) 15%, var(--electric-dim) 85%, transparent);
+      height: 32px;
+      margin: 20px auto 0;
+      background: linear-gradient(180deg, transparent, var(--electric-dim), transparent);
     }
     .how-step p { max-width: 420px; }
   }
@@ -1026,14 +1059,20 @@
   <h1>Wake up to your <span class="glow">future&nbsp;self.</span></h1>
 
   <p class="sub">
-    DashVu is the premium smart mirror that turns your daily ritual into a
-    performance ritual — your goals, habits, schedule, and wellbeing, unified in
-    one intelligent glance, guided by an AI that keeps you aligned with who
-    you're becoming.
+    Meet DashVu, your personal digital assistant designed to bring clarity to
+    your day, purpose to your actions, and balance to your life. Unify your
+    goals, habits, and daily priorities in one personalized dashboard that keeps
+    you connected to the person you're becoming.
   </p>
 
-  <a class="cta" href="https://omniform1.com/forms/v1/landingPage/6ae8d574714bb4bfe9142237/6ae95354bad6e658489a1ae5">Join Waitlist</a>
-  <p class="cta-note">Limited first-run production. Early access opening soon.</p>
+  <p class="sub-support">
+    Introducing <strong class="sub-support-name">DashVu Mobile</strong> — your personalized daily companion for a more
+    intentional life. Start free and turn everyday actions into meaningful
+    progress toward the person you're becoming.
+  </p>
+
+  <a class="cta" href="https://omniform1.com/forms/v1/landingPage/6ae8d574714bb4bfe9142237/6ae95354bad6e658489a1ae5">Join the Early Access Waitlist</a>
+  <p class="cta-note">Free to join · Be among the first to experience DashVu Mobile</p>
 
   <div class="mirror-line"></div>
 </section>
@@ -1045,21 +1084,22 @@
       <div class="ps-label problem">The Problem</div>
       <h2>You're performing. But are you <em>aligned?</em></h2>
       <p>
-        You've built a life most people would call successful. So why does it
-        feel like you're <em>underliving</em> it?
+        You've worked hard to build a successful life. So why does it sometimes
+        feel like you're losing sight of the person you set out to become?
       </p>
       <p>
-        Every day, the calendar wins. Meetings get your energy. Deadlines get
-        your focus. The person you set out to become gets whatever's left.
+        Every day, your schedule demands your time. Responsibilities consume your
+        energy. And the goals that matter most to you are left competing for
+        whatever remains.
       </p>
       <p>
-        Your goals sit in one app. Your habits in another. Your health in a
-        third. And none of them ask the only question that matters:
-        <em>are you becoming who you said you would?</em>
+        Your goals live in one app. Your habits in another. Your schedule
+        somewhere else. Everything is organized, yet nothing feels truly
+        connected.
       </p>
       <p>
-        That's the quiet cost of doing your best without feeling your best.
-        It doesn't burn you out. It compounds.
+        <em>You're making progress. But is it progress toward the life you
+        actually want?</em>
       </p>
     </div>
 
@@ -1069,24 +1109,20 @@
       <div class="ps-label solution">The Solution</div>
       <h2>Alignment, made <span class="glow">daily.</span></h2>
       <p>
-        DashVu is the first and only platform built to close the gap between who
-        you are today and who you intend to become — <em>actively, every single
-        day.</em> Not another passive dashboard. A living system that watches your
-        goals, habits, schedule, and wellbeing in one place, and dynamically
-        recalibrates your day toward your ideal self.
+        Meet DashVu. Your personal digital assistant designed to bridge the gap
+        between who you are today and who you aspire to become.
       </p>
       <p>
-        Every morning, your mirror shows you two things: where you stand, and
-        exactly what today requires. Intentional by design. Impossible to drift.
+        By bringing your goals, habits, schedule, and daily priorities together
+        in one personalized experience, DashVu helps you gain clarity, act with
+        intention, and stay connected to what matters most.
+      </p>
+      <p>
+        <em>Because becoming your best self isn't about doing more. It's about
+        making what you do count.</em>
       </p>
       <div class="ps-roles">
-        <span>Executives</span>
-        <span>Founders</span>
-        <span>Investors</span>
-        <span>Medical</span>
-        <span>Finance</span>
-        <span>Legal</span>
-        <span>Creatives</span>
+        <span>For those who aspire to achieve more without losing sight of who they're becoming.</span>
       </div>
     </div>
 
@@ -1098,8 +1134,8 @@
 
     <div class="features-header">
       <div class="ps-label solution">Features &amp; Benefits</div>
-      <h2>Where Peak Performance meets Holistic Wellness</h2>
-      <p>Four ways DashVu keeps you aligned with your Ideal Future Self, every single day.</p>
+      <h2>Everything You Need to Become Who You're Meant to Be.</h2>
+      <p>One connected experience designed to help you align your day with your vision, turn personal growth into action, and make meaningful progress toward the life you're creating.</p>
     </div>
 
     <div class="feature-grid">
@@ -1107,29 +1143,32 @@
       <div class="feature-card">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"/>
-            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="12" cy="12" r="1"/>
           </svg>
         </div>
-        <h3>The Daily Rundown</h3>
+        <h3>Daily Alignment</h3>
         <p>
-          Start every morning with clarity, not chaos. In under 30 seconds you
-          know exactly what today asks of you — and you're already ahead of it.
+          Bring your goals, schedule, priorities, and daily context into one
+          clear picture. Know what matters most, what needs your attention, and
+          what's coming next so you can navigate each day with clarity and
+          intention.
         </p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z"/>
-            <path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/>
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M8 12.5l2.7 2.7L16 9.5"/>
           </svg>
         </div>
-        <h3>AI Personal Digital Assistant</h3>
+        <h3>Mastery Actions</h3>
         <p>
-          Receive proactive, personalized guidance that helps you stay organized,
-          make better decisions, and maintain balance across mind, body, and
-          lifestyle.
+          Turn your intentions into consistent, meaningful action through
+          structured tasks, habits, and routines. Build the discipline, skills,
+          and capabilities that shape who you're becoming.
         </p>
       </div>
 
@@ -1142,26 +1181,24 @@
         </div>
         <h3>Vision Compass<sup>™</sup></h3>
         <p>
-          Turns your daily actions into proof you're becoming who you set out to
-          be. Stay consistently aligned with your future goals by turning your
-          daily habits, decisions, and routines into meaningful progress toward
-          the person you aspire to become.
+          Define who you aspire to become and the areas of life you want to
+          elevate. Connect your goals and daily actions to a clear, balanced
+          vision that guides your personal growth.
         </p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3l8 4.5-8 4.5-8-4.5L12 3z"/>
-            <path d="M4 12l8 4.5 8-4.5"/>
-            <path d="M4 16.5L12 21l8-4.5"/>
+            <path d="M4 8h13M14 5l3 3-3 3"/>
+            <path d="M20 16H7M10 13l-3 3 3 3"/>
           </svg>
         </div>
-        <h3>Adapting Living Modes</h3>
+        <h3>Adaptive Guidance</h3>
         <p>
-          Enjoy a dashboard that intelligently adapts to every environment and
-          moment, delivering the right information while protecting your privacy
-          and enhancing your daily experience.
+          Stay aligned even when life doesn't go according to plan. Get timely
+          awareness of meaningful changes, potential conflicts, and suggested
+          adjustments so you can adapt with confidence while staying in control.
         </p>
       </div>
 
@@ -1184,38 +1221,40 @@
     <div class="how-header">
       <div class="ps-label solution">How It Works</div>
       <h2>Reflect. Realign. Rise.</h2>
+      <p>A more intentional life starts with knowing where you want to go — and making every day count toward getting there.</p>
     </div>
 
     <div class="how-steps">
 
       <div class="how-step">
         <div class="step-number">01</div>
+        <div class="step-label">REFLECT</div>
         <h3>Define Your Destination</h3>
         <p>
-          Personalize DashVu around your goals, vision, habits, and routines.
-          Connect what matters most to you and build the foundation for your
-          ideal life.
+          Start with your vision. Define who you're becoming, discover your WHY,
+          and set meaningful goals that reflect the life you want to create.
         </p>
       </div>
 
       <div class="how-step">
         <div class="step-number">02</div>
+        <div class="step-label">REALIGN</div>
         <h3>Navigate Your Day</h3>
         <p>
-          Start each day with clarity and direction. Powered by GOGS, DashVu
-          brings your schedule, priorities, and goals into one personalized
-          Daily Rundown — offering guidance on what matters most, with optional
-          AI-powered insights.
+          Bring your priorities, habits, and daily actions into focus. Build a
+          more intentional routine that connects what you do today with where
+          you want to go.
         </p>
       </div>
 
       <div class="how-step">
         <div class="step-number">03</div>
+        <div class="step-label">RISE</div>
         <h3>Stay on Course</h3>
         <p>
-          Turn daily intentions into consistent action. Track your progress,
-          reflect on your habits, and receive timely guidance to adapt, stay
-          aligned, and perform at your best without sacrificing your wellbeing.
+          Create positive momentum through consistent action, stay aware when
+          circumstances change, and make thoughtful adjustments that keep you
+          moving forward.
         </p>
       </div>
 
@@ -1345,7 +1384,7 @@
 
     <div class="footer-bottom">
       <span>&copy; 2026 DashVu. All rights reserved.</span>
-      <a href="/privacy/">Privacy Policy</a>
+      <a href="/privacy-policy/">Privacy Policy</a>
     </div>
 
   </div>
