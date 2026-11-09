@@ -662,6 +662,13 @@
     color: var(--text-secondary);
   }
 
+  .price-planned {
+    margin: -6px 0 14px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: rgba(214, 224, 245, 0.62);
+  }
+
   .price-desc {
     font-size: 16px;
     line-height: 1.6;
@@ -755,10 +762,12 @@
   }
 
   .pricing-note {
-    margin-top: 40px;
+    max-width: 640px;
+    margin: 40px auto 0;
     text-align: center;
     font-size: 13.5px;
-    color: rgba(214, 224, 245, 0.42);
+    line-height: 1.6;
+    color: rgba(214, 224, 245, 0.58);
   }
 
   @media (max-width: 800px) {
@@ -1280,7 +1289,7 @@
     <div class="pricing-header">
       <div class="ps-label solution">Pricing</div>
       <h2>Choose how far you want to go.</h2>
-      <p>Start with the foundation for free. Upgrade when you're ready for a guide that works alongside you every day.</p>
+      <p>Start free with DashVu Mobile and build the foundation for a more intentional life. Go further with intelligent, personalized guidance through DashVu Premium, coming soon.</p>
     </div>
 
     <div class="pricing-grid">
@@ -1290,62 +1299,57 @@
         <div class="price-tier">Starter</div>
         <div class="price-amount">
           <strong>Free</strong>
-          <span>forever</span>
+          <span>Forever</span>
         </div>
-        <p class="price-desc">Everything you need to see your whole life in one place and build the daily ritual.</p>
-        <a class="price-cta secondary" href="https://omniform1.com/forms/v1/landingPage/6ae8d574714bb4bfe9142237/6ae95354bad6e658489a1ae5">Join Waitlist</a>
+        <p class="price-desc">Your foundation for a more intentional life. Bring clarity to your day, turn your ambitions into action, and stay connected to the person you're becoming.</p>
+        <a class="price-cta secondary" href="https://omniform1.com/forms/v1/landingPage/6ae8d574714bb4bfe9142237/6ae95354bad6e658489a1ae5">Join Early Access</a>
 
-        <div class="price-group">Your Daily Rundown</div>
+        <div class="price-group">Your Four Pillars</div>
         <ul class="price-list">
-          <li><div>Full Daily Rundown dashboard<span>Your day, goals, and wellbeing in one glance</span></div></li>
-          <li><div>7 core modules<span>Time and weather, calendar, habits, goals, finance snapshot, health stats, and daily motivation</span></div></li>
-          <li><div>Full layout customization<span>Arrange your dashboard around what matters most</span></div></li>
-          <li><div>Habit tracking with streaks</div></li>
-          <li><div>Goals and milestone progress</div></li>
+          <li><div>Daily Alignment<span>Navigate your day with clarity and intention.</span></div></li>
+          <li><div>Mastery Actions<span>Build discipline through tasks, habits, and routines.</span></div></li>
+          <li><div>Vision Compass&trade;<span>Connect everyday actions to your bigger vision.</span></div></li>
+          <li><div>Adaptive Guidance<span>Navigate changing plans with awareness and control.</span></div></li>
         </ul>
 
-        <div class="price-group">Connections &amp; Access</div>
+        <div class="price-group">Your Experience</div>
         <ul class="price-list">
-          <li><div>Calendar sync<span>Google Calendar, Apple Calendar, Microsoft Outlook</span></div></li>
-          <li><div>Productivity sync<span>Notion, Todoist, Apple Reminders</span></div></li>
-          <li><div>Wearable sync<span>Apple Watch, Fitbit, Whoop</span></div></li>
-          <li><div>Mobile companion app</div></li>
-          <li><div>Web and desktop access</div></li>
+          <li><div>DashVu Mobile access</div></li>
+          <li><div>Personalized daily experience</div></li>
         </ul>
       </div>
 
       <!-- Premium -->
       <div class="price-card premium">
-        <div class="price-badge">AI-Powered</div>
+        <div class="price-badge">Coming Soon</div>
         <div class="price-tier">Premium</div>
         <div class="price-amount">
           <strong>$29.99</strong>
           <span>/ month</span>
         </div>
-        <p class="price-desc">Everything in Starter, plus an AI Personal Digital Assistant that keeps you aligned with your Ideal Future Self.</p>
-        <a class="price-cta primary" href="https://omniform1.com/forms/v1/landingPage/6ae8d574714bb4bfe9142237/6ae95354bad6e658489a1ae5">Join Waitlist</a>
+        <p class="price-planned">Planned pricing</p>
+        <p class="price-desc">Go beyond daily organization with an AI Personal Digital Assistant that helps you navigate decisions, anticipate challenges, and stay aligned with your future self.</p>
+        <a class="price-cta primary" href="https://omniform1.com/forms/v1/landingPage/6ae8d574714bb4bfe9142237/6ae95354bad6e658489a1ae5">Get Notified</a>
 
-        <div class="price-group">AI Personal Digital Assistant</div>
+        <div class="price-group">Your AI Personal Assistant</div>
         <ul class="price-list">
-          <li><div>Intelligent daily briefings<span>A personalized summary of what matters today</span></div></li>
-          <li><div>Proactive coaching and nudges<span>Timely prompts based on your habits and goals</span></div></li>
-          <li><div>Conversational mode<span>Ask anything about your day, goals, or priorities</span></div></li>
-          <li><div>Context-aware actions<span>Organizes and plans on your behalf to reduce decision fatigue</span></div></li>
+          <li><div>Everything in Starter<span>All four foundational DashVu pillars.</span></div></li>
+          <li><div>Intelligent Daily Briefings<span>Personalized insights into your day and priorities.</span></div></li>
+          <li><div>Proactive Guidance<span>Context-aware suggestions to support your goals.</span></div></li>
+          <li><div>Conversational Assistance<span>Get help navigating your schedule and decisions.</span></div></li>
+          <li><div>Intelligent Adaptive Planning<span>Explore recommendations when plans change.</span></div></li>
         </ul>
 
-        <div class="price-group">Alignment &amp; Insight</div>
+        <div class="price-group">Deeper Personalization</div>
         <ul class="price-list">
-          <li><div>Vision Compass&trade;<span>Weekly goal alignment checks between your actions and your vision</span></div></li>
-          <li><div>AI-powered habit insights<span>Streak analysis, pattern detection, and smart reminders</span></div></li>
-          <li><div>Schedule optimization<span>Conflict detection and priority reordering based on your energy</span></div></li>
-          <li><div>Personalized recommendations<span>Balanced across mind, body, and lifestyle</span></div></li>
-          <li><div>Adapting Living Modes<span>Travel mode and routines that adjust when life changes</span></div></li>
+          <li><div>AI-Powered Growth Insights<span>Discover patterns in habits, goals, and progress.</span></div></li>
+          <li><div>Personalized Recommendations<span>Support growth across mind, body, and lifestyle.</span></div></li>
         </ul>
       </div>
 
     </div>
 
-    <p class="pricing-note">Pricing reflects planned launch pricing and may change before release. Join the waitlist for early access.</p>
+    <p class="pricing-note">DashVu Mobile Starter is planned as our first release. Premium features and pricing are subject to change. The DashVu Smart Mirror will be offered separately.</p>
 
   </div>
 </section>
