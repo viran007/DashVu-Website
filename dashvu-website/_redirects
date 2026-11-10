@@ -1,0 +1,12 @@
+# DashVu privacy policy: the permanent public address is /privacy-policy/
+# The page file is privacy-policy/index.html, which Netlify serves at /privacy-policy
+# and /privacy-policy/ directly, including on refresh and when arriving from other sites.
+
+# Older addresses send visitors to the permanent page, so existing links
+# (for example the Omnisend signup page, which links to /privacy) keep working.
+# "!" forces these even if an old privacy/ folder is present in a deploy.
+/privacy                             /privacy-policy/    301!
+/privacy/                            /privacy-policy/    301!
+/privacy.html                        /privacy-policy/    301
+# The older policy file is replaced by the permanent page; "!" applies the redirect even though the file exists.
+/privacy/privacy_policy_page.html    /privacy-policy/    301!
