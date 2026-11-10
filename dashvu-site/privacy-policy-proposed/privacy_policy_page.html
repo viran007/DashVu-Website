@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — DashVu by Vedinci Tech</title>
+<meta name="description" content="How Vedinci Tech, the company behind DashVu, collects, uses, shares, and protects personal information.">
+<style>
+  :root {
+    --navy-deep: #050A1A;
+    --navy: #081228;
+    --electric: #00D4FF;
+    --electric-dim: rgba(0, 212, 255, 0.55);
+    --text-primary: #F5F8FF;
+    --text-secondary: #C5D0E6;
+    --text-muted: #9AA8C4;
+    --border: rgba(120, 160, 255, 0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    background: var(--navy-deep);
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: var(--electric);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  a:hover { color: #7FE8FF; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--electric);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 16px;
+    top: -60px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: var(--electric);
+    color: #03101F;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 10;
+  }
+  .skip-link:focus { top: 16px; color: #03101F; }
+
+  /* ---------- Header ---------- */
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgba(5, 10, 26, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.42em;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .logo span { color: var(--electric); }
+  .logo:hover { color: var(--text-primary); }
+
+  .back-link {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 8px 4px;
+  }
+  .back-link:hover { color: var(--text-primary); }
+
+  /* ---------- Hero ---------- */
+
+  .policy-hero {
+    padding: 88px 24px 56px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% -10%, rgba(0, 212, 255, 0.12), transparent 65%),
+      var(--navy-deep);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 6vw, 60px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+  }
+
+  .policy-meta {
+    font-size: 15px;
+    color: var(--text-muted);
+  }
+  .policy-meta p + p { margin-top: 2px; }
+
+  /* ---------- Layout ---------- */
+
+  .policy-layout {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 24px 120px;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 64px;
+    align-items: start;
+  }
+
+  .toc {
+    position: sticky;
+    top: 96px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 4px;
+  }
+
+  .toc h2 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+
+  .toc ol {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .toc a {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .toc a:hover {
+    color: var(--text-primary);
+    background: rgba(120, 160, 255, 0.07);
+  }
+
+  .policy {
+    max-width: 720px;
+  }
+
+  .policy section {
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 80px;
+  }
+  .policy section:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+
+  .policy h2 {
+    font-size: clamp(24px, 3vw, 30px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .policy h3 {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    margin: 32px 0 12px;
+  }
+
+  .policy h4 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--text-primary);
+    margin: 24px 0 8px;
+  }
+
+  .policy p + p,
+  .policy ul + p,
+  .policy p + ul { margin-top: 14px; }
+
+  .policy ul {
+    padding-left: 22px;
+  }
+  .policy li { margin-top: 8px; }
+  .policy li::marker { color: var(--electric); }
+
+  .policy strong { color: var(--text-primary); font-weight: 600; }
+
+  .callout {
+    margin-top: 20px;
+    padding: 18px 22px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 212, 255, 0.22);
+    background: rgba(0, 212, 255, 0.05);
+  }
+
+  .contact-card {
+    margin-top: 20px;
+    padding: 24px 26px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: linear-gradient(160deg, rgba(120, 160, 255, 0.06) 0%, rgba(120, 160, 255, 0.02) 100%);
+  }
+
+  .contact-card dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 24px;
+  }
+  .contact-card dt { color: var(--text-muted); font-size: 15px; }
+  .contact-card dd { color: var(--text-primary); overflow-wrap: anywhere; }
+
+  /* Unresolved items for review before publication */
+  .todo {
+    background: rgba(255, 196, 0, 0.16);
+    color: #FFD866;
+    border: 1px dashed rgba(255, 216, 102, 0.6);
+    border-radius: 6px;
+    padding: 1px 6px;
+    font-weight: 500;
+  }
+
+  .policy .commitment {
+    margin-top: 72px;
+    padding: 40px 36px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    background:
+      radial-gradient(ellipse 80% 80% at 50% 0%, rgba(0, 212, 255, 0.10), transparent 70%),
+      rgba(120, 160, 255, 0.03);
+  }
+  .policy .commitment h2 { margin-bottom: 16px; }
+
+  .back-bottom {
+    margin-top: 56px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 15px 34px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #00E0FF 0%, #0090FF 100%);
+    color: #03101F;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 28px rgba(0, 180, 255, 0.3);
+  }
+  .btn:hover { color: #03101F; transform: translateY(-1px); }
+
+  /* ---------- Footer ---------- */
+
+  .site-footer {
+    padding: 40px 24px;
+    background: #03071A;
+    border-top: 1px solid rgba(120, 160, 255, 0.1);
+  }
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .footer-inner a { color: var(--text-secondary); text-decoration: none; }
+  .footer-inner a:hover { color: var(--text-primary); }
+  .footer-links { display: flex; gap: 24px; }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 900px) {
+    .policy-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .toc {
+      position: static;
+      max-height: none;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(120, 160, 255, 0.03);
+    }
+    .policy { max-width: none; }
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .policy-hero { padding: 64px 20px 40px; }
+    .policy-layout { padding: 16px 20px 96px; }
+    .back-link .long { display: none; }
+    .contact-card dl { grid-template-columns: 1fr; gap: 2px; }
+    .contact-card dd { margin-bottom: 12px; }
+    .commitment { padding: 32px 22px; }
+    .footer-inner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="https://dashvu-preview.netlify.app/" aria-label="DashVu home">DASH<span>VU</span></a>
+    <a class="back-link" href="https://dashvu-preview.netlify.app/">&larr; Back to <span class="long">the DashVu </span>website</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="policy-hero">
+    <p class="eyebrow">DashVu — A Product of Vedinci Tech</p>
+    <h1>Privacy Policy</h1>
+    <div class="policy-meta">
+      <p>Effective Date: November 3rd, 2026</p>
+      <p>Last Updated: November 4th, 2026</p>
+    </div>
+  </div>
+
+  <div class="policy-layout">
+
+    <nav class="toc" aria-labelledby="toc-heading">
+      <h2 id="toc-heading">On this page</h2>
+      <ol>
+        <li><a href="#introduction">1. Introduction</a></li>
+        <li><a href="#information-we-collect">2. Information We Collect</a></li>
+        <li><a href="#how-we-use">3. How We Use Your Information</a></li>
+        <li><a href="#email-waitlist">4. Email Waitlist and Marketing Communications</a></li>
+        <li><a href="#cookies">5. Cookies, Analytics, and Tracking Technologies</a></li>
+        <li><a href="#sharing">6. How We Share Personal Information</a></li>
+        <li><a href="#storage">7. Data Storage, Retention, and Security</a></li>
+        <li><a href="#rights">8. Your Privacy Rights and Choices</a></li>
+        <li><a href="#children">9. Children's Privacy</a></li>
+        <li><a href="#third-party">10. Third-Party Websites and Services</a></li>
+        <li><a href="#international">11. International Visitors</a></li>
+        <li><a href="#changes">12. Changes to This Privacy Policy</a></li>
+        <li><a href="#contact">13. Contact Us</a></li>
+      </ol>
+    </nav>
+
+    <article class="policy">
+
+      <section id="introduction" aria-labelledby="h-introduction">
+        <h2 id="h-introduction">1. Introduction</h2>
+        <p>Welcome to DashVu.</p>
+        <p>At Vedinci Tech, we believe technology should help people live with greater clarity, intention, and control. Respecting your privacy is an important part of that mission.</p>
+        <p>This Privacy Policy explains how Vedinci Tech LLC ("Vedinci Tech," "we," "our," or "us"), the company behind DashVu, collects, uses, shares, and protects personal information when you visit our website, join the DashVu waitlist, subscribe to communications, or contact us.</p>
+        <p>DashVu is a product and brand developed by Vedinci Tech.</p>
+        <p>This Privacy Policy applies to:</p>
+        <ul>
+          <li>The DashVu website at <a href="https://dashvu-preview.netlify.app">https://dashvu-preview.netlify.app</a> and any successor official website identified in this policy.</li>
+          <li>DashVu's email waitlist and related signup pages operated through Omnisend.</li>
+          <li>Our prelaunch newsletters, product announcements, and marketing communications.</li>
+          <li>Information you voluntarily provide when contacting us about DashVu.</li>
+        </ul>
+        <p class="callout"><strong>Scope:</strong> This policy describes our current website and prelaunch marketing activities. It does not yet cover the processing of personal information within future DashVu software applications, user accounts, mobile experiences, or smart mirror products. We will provide updated or additional privacy information before introducing those activities.</p>
+      </section>
+
+      <section id="information-we-collect" aria-labelledby="h-collect">
+        <h2 id="h-collect">2. Information We Collect</h2>
+        <p>We collect information depending on how you interact with DashVu.</p>
+
+        <h3>A. Information You Provide</h3>
+        <p>When you join the DashVu waitlist, our current signup form requests:</p>
+        <ul>
+          <li><strong>Email address:</strong> Used to manage your registration and send the DashVu communications described in this policy.</li>
+        </ul>
+        <p>Our current active waitlist form does not request your name or phone number.</p>
+        <p>If you contact us directly, we may also receive information you voluntarily provide, such as your name, email address, message, or other information included in your inquiry.</p>
+        <p>We do not currently collect payment information, health records, calendar events, personal goals, or other future DashVu product-account information through the website waitlist.</p>
+
+        <h3>B. Website and Technical Information</h3>
+        <p>When you visit our website or hosted signup page, our hosting and service providers may process technical information associated with your visit, including:</p>
+        <ul>
+          <li>Internet Protocol (IP) address.</li>
+          <li>Browser and device information.</li>
+          <li>Website requests and associated technical details.</li>
+          <li>Pages or signup forms accessed.</li>
+          <li>Information necessary for security, troubleshooting, or service operation.</li>
+        </ul>
+        <p>The specific information processed depends on the service and its configuration.</p>
+
+        <h3>C. Waitlist Interaction Information</h3>
+        <p>Our waitlist is hosted by Omnisend, a third-party email marketing provider.</p>
+        <p>When you open the Omnisend-hosted signup page, Omnisend processes a form-view event.</p>
+        <p>If you submit the form, Omnisend may also process signup-related information, such as your email address, subscription status, submission time, and applicable consent records.</p>
+      </section>
+
+      <section id="how-we-use" aria-labelledby="h-use">
+        <h2 id="h-use">3. How We Use Your Information</h2>
+        <p>We use personal information for the following purposes.</p>
+
+        <h3>Waitlist Management</h3>
+        <p>To register interest in DashVu, maintain our subscriber list, and communicate information about upcoming product releases and early-access opportunities.</p>
+
+        <h3>Email Marketing and Brand Communications</h3>
+        <p>To send requested or authorized:</p>
+        <ul>
+          <li>Product development updates.</li>
+          <li>Launch announcements.</li>
+          <li>Early-access and waitlist information.</li>
+          <li>Newsletters about productivity, personal development, wellness, and intentional living.</li>
+          <li>Information about DashVu software and smart mirror products.</li>
+          <li>Relevant promotional announcements consistent with your subscription choices.</li>
+        </ul>
+
+        <h3>Website Operation and Improvement</h3>
+        <p>To operate and maintain our website, troubleshoot technical problems, understand relevant service activity, and improve the visitor experience.</p>
+
+        <h3>Customer Communications</h3>
+        <p>To respond to inquiries, feedback, and privacy-related requests.</p>
+
+        <h3>Security and Legal Obligations</h3>
+        <p>To help protect our services, prevent misuse, maintain appropriate records, and comply with applicable legal requirements.</p>
+        <p>We will provide additional notice or obtain consent where required before using personal information for materially different purposes.</p>
+      </section>
+
+      <section id="email-waitlist" aria-labelledby="h-email">
+        <h2 id="h-email">4. Email Waitlist and Marketing Communications</h2>
+        <p>Vedinci Tech uses Omnisend to manage DashVu's email waitlist and associated marketing communications.</p>
+        <p>When you select "Join Waitlist" on our website, you are directed to a signup page hosted by Omnisend.</p>
+        <p>Your email address is submitted directly through that hosted form and processed by Omnisend to support our waitlist.</p>
+
+        <h3>Subscription Choices</h3>
+        <p>Joining the DashVu waitlist is voluntary.</p>
+        <p>Our current signup page explains that subscribers agree to receive DashVu launch and early-access emails.</p>
+        <p>The signup does not constitute a purchase or guarantee participation in a beta program, early-access release, or future product launch.</p>
+
+        <h3>Unsubscribing</h3>
+        <p>You may opt out of marketing emails at any time using the unsubscribe mechanism included in our marketing communications or by contacting us at <a href="mailto:privacy@vedinci.com">privacy@vedinci.com</a>.</p>
+        <p>We will honor applicable marketing opt-out requirements.</p>
+        <p>After unsubscribing, we may retain limited information when necessary to respect your communication preferences or meet applicable legal obligations.</p>
+
+        <h3>Email Confirmation</h3>
+        <p>DashVu uses a double opt-in process for its email waitlist.</p>
+        <p>After submitting your email address through our Omnisend-hosted signup form, you will receive an email asking you to confirm your subscription.</p>
+        <p>Your email address will be added to our active marketing subscriber list only after you click the confirmation link.</p>
+        <p>This process helps us verify that subscribers wish to receive DashVu communications and reduces unwanted or unauthorized subscriptions.</p>
+
+        <h3>Text Message Marketing</h3>
+        <p>Our current active waitlist collects email addresses only.</p>
+        <p>We do not currently collect phone numbers through this form for SMS marketing.</p>
+        <p>If we introduce text-message marketing in the future, we will provide additional disclosures and obtain any consent required by applicable law.</p>
+      </section>
+
+      <section id="cookies" aria-labelledby="h-cookies">
+        <h2 id="h-cookies">5. Cookies, Analytics, and Tracking Technologies</h2>
+        <p>Vedinci Tech LLC is committed to transparency about how information is collected and used when visitors interact with DashVu and its email communications.</p>
+
+        <h3>A. DashVu Website</h3>
+        <p>The DashVu website is operated by Vedinci Tech LLC and hosted by Netlify.</p>
+        <p>Our current website does not include Google Analytics, Meta Pixel, TikTok Pixel, Google Ads, or other identified client-side advertising tracking technologies.</p>
+        <p>Netlify Web Analytics is disabled.</p>
+        <p>Our technical review did not identify browser cookies or local browser storage being created by the DashVu website during the interactions tested.</p>
+        <p>Netlify may process technical information, including IP addresses, browser information, and website requests, to deliver, secure, and maintain our website.</p>
+
+        <h3>B. Omnisend-Hosted Signup Page</h3>
+        <p>When you select "Join Waitlist," you are directed to a signup page hosted by Omnisend, our email marketing provider.</p>
+        <p>Omnisend loads scripts and supporting resources to operate the signup page and monitor technical errors.</p>
+        <p>When the signup page opens, Omnisend records a form-view event. This event includes information such as the date and time, page address and title, form identifier, and whether the visitor uses a mobile device.</p>
+        <p>Our initial technical review did not identify browser-accessible cookies or local browser storage before email submission.</p>
+        <p>Omnisend may process additional technical information or use cookies and similar identifiers during signup and subsequent interactions. The exact technologies involved depend on the services and settings in use.</p>
+
+        <h3>C. Email-Open Tracking and Consent</h3>
+        <p>DashVu uses Omnisend to manage email subscriptions and distribute waitlist, product, and marketing communications.</p>
+        <p>We use a double opt-in process requiring subscribers to confirm their email address before completing their subscription.</p>
+        <p>We also provide a separate, optional choice concerning email-open tracking.</p>
+        <p>With the consent-based email-open tracking setting enabled, Omnisend includes an invisible tracking image in marketing emails only for subscribers whose email-open tracking consent is recorded as given.</p>
+        <p>Subscribers who decline tracking or have not recorded a tracking preference do not receive email-open tracking pixels in newly sent marketing emails.</p>
+        <p>Email-open tracking helps us understand email engagement and improve our communications. A recorded email open does not necessarily mean a recipient personally read the message.</p>
+        <p>Subscribers may update or withdraw their email-open tracking consent through our email preference management options without cancelling their marketing subscription.</p>
+        <p>Withdrawing consent applies to future emails and does not automatically delete historical tracking information.</p>
+        <p>Omnisend may separately process information about interactions with links in our emails. Email-open tracking consent controls do not govern all other forms of email interaction tracking.</p>
+
+        <h3>D. Advertising and Behavioral Tracking</h3>
+        <p>Vedinci Tech does not currently sell personal information or share it for cross-context behavioral advertising.</p>
+        <p>Our current website and waitlist signup page do not include identified Meta Pixel, TikTok Pixel, Google Ads, or comparable advertising pixels.</p>
+
+        <h3>E. Your Privacy Choices</h3>
+        <p>You may control certain cookies and browser storage through your browser settings.</p>
+        <p>You may choose whether to allow email-open tracking when subscribing to DashVu communications and may update that preference through the available subscriber preference controls.</p>
+        <p>You may unsubscribe from DashVu marketing emails at any time using the unsubscribe mechanism provided in our emails.</p>
+        <p>For privacy-related questions or requests, contact <a href="mailto:privacy@vedinci.com">privacy@vedinci.com</a>.</p>
+        <p>If we introduce additional analytics, advertising, or tracking technologies in the future, we will update this policy and provide applicable choices or obtain consent where required by law.</p>
+      </section>
+
+      <section id="sharing" aria-labelledby="h-sharing">
+        <h2 id="h-sharing">6. How We Share Personal Information</h2>
+        <p>Vedinci Tech uses third-party providers to support the operation of DashVu's website and prelaunch marketing activities.</p>
+
+        <h3>A. Netlify — Website Hosting</h3>
+        <p>Our website is hosted by Netlify.</p>
+        <p>Netlify processes website requests and associated technical information necessary to deliver and operate the hosted website.</p>
+        <p>The information Netlify retains, its retention periods, and its independent processing practices are governed by its applicable terms, service arrangements, and privacy documentation.</p>
+
+        <h3>B. Omnisend — Waitlist and Email Marketing</h3>
+        <p>We use Omnisend to host our signup page, collect and manage waitlist email addresses, and support email marketing communications.</p>
+        <p>Omnisend may process subscriber information, form interactions, subscription preferences, and associated technical information to provide these services.</p>
+        <p>For more information about Omnisend, please review its published privacy documentation.</p>
+
+        <h3>C. Legal and Business Requirements</h3>
+        <p>We may disclose personal information where required or permitted by applicable law, including to respond to lawful legal requests, protect our rights, address security incidents, or facilitate legitimate business transactions.</p>
+
+        <h3>D. Other Third Parties and Advertising</h3>
+        <p>Vedinci Tech does not currently sell personal information or share it for cross-context behavioral advertising.</p>
+        <p>We do not currently disclose DashVu waitlist subscriber information to additional advertising partners or independent marketing providers beyond the services described in this policy.</p>
+        <p>Our service providers, including Omnisend and Netlify, may engage authorized subprocessors to help deliver their services, subject to their applicable contractual and privacy obligations.</p>
+        <p>If our information-sharing practices change, we will update this Privacy Policy and provide additional notices or choices where required by applicable law.</p>
+      </section>
+
+      <section id="storage" aria-labelledby="h-storage">
+        <h2 id="h-storage">7. Data Storage, Retention, and Security</h2>
+
+        <h3>A. Data Storage</h3>
+        <p>Vedinci Tech LLC uses third-party service providers to support the operation of the DashVu website and email waitlist.</p>
+        <p>Our website is hosted by Netlify, which processes technical information necessary to deliver, maintain, and secure the website.</p>
+        <p>Our email waitlist and associated marketing communications are managed through Omnisend. Subscriber email addresses, subscription preferences, consent records, and related information are processed through Omnisend's systems.</p>
+        <p>These service providers may process information in the United States or other locations where they or their authorized subprocessors operate.</p>
+
+        <h3>B. Data Retention</h3>
+        <p>Vedinci Tech retains personal information for as long as reasonably necessary to manage the DashVu waitlist, provide requested communications, fulfill legitimate business purposes, and comply with applicable legal obligations.</p>
+
+        <h4>Active Subscribers</h4>
+        <p>We retain subscription information while individuals remain subscribed and the information continues to be necessary for the purposes described in this Privacy Policy.</p>
+
+        <h4>Inactive Subscribers</h4>
+        <p>We have adopted a data retention approach that uses a 12-month period without reliable evidence of engagement as a threshold for reviewing whether subscriber information remains necessary.</p>
+        <p>A 12-month period of inactivity does not automatically result in deletion.</p>
+        <p>We may contact subscribers to confirm whether they wish to continue receiving DashVu communications. Depending on the circumstances, we may retain the subscription, discontinue marketing communications, or delete information that is no longer necessary.</p>
+        <p>We do not rely solely on email-open tracking to determine subscriber inactivity.</p>
+
+        <h4>Unconfirmed Subscriptions</h4>
+        <p>Individuals who do not complete the double opt-in confirmation process are not added to our confirmed marketing subscriber list.</p>
+        <p>Omnisend may retain limited technical or submission-related information associated with incomplete registrations according to its operational practices.</p>
+
+        <h4>Unsubscribed Contacts</h4>
+        <p>When an individual unsubscribes, we stop sending marketing communications to that contact.</p>
+        <p>We may retain limited information where reasonably necessary and legally permitted to honor opt-out preferences, prevent unwanted resubscription, maintain appropriate records, or comply with applicable legal obligations.</p>
+
+        <h4>Deletion Requests</h4>
+        <p>Individuals may request deletion of their personal information by contacting <a href="mailto:privacy@vedinci.com">privacy@vedinci.com</a>.</p>
+        <p>We review and respond to deletion requests in accordance with applicable law, including any appropriate identity-verification requirements and lawful retention exceptions.</p>
+        <p>Where deletion is appropriate, we take steps to remove eligible information from systems we control or coordinate with our service providers to process the request.</p>
+
+        <h4>Information No Longer Needed</h4>
+        <p>When personal information is no longer necessary for the purposes described in this policy or another justified retention purpose, we take appropriate steps to delete or securely dispose of it.</p>
+
+        <h3>C. Data Security</h3>
+        <p>Vedinci Tech LLC takes the protection of personal information seriously.</p>
+        <p>We use service providers, including Netlify and Omnisend, that document technical and organizational safeguards designed to protect information processed through their services.</p>
+        <p>Our current DashVu marketing website does not directly collect or store waitlist subscriber email addresses; those registrations are processed through Omnisend's hosted signup page.</p>
+        <p>We seek to restrict access to personal information to authorized individuals who require it for legitimate business purposes and to protect account credentials and systems against unauthorized access.</p>
+        <p>We evaluate our security practices as our website and marketing operations develop.</p>
+        <p>Although we take reasonable steps designed to protect personal information, no method of electronic transmission or storage can be guaranteed to be completely secure.</p>
+
+        <h3>D. Privacy Questions and Requests</h3>
+        <p>For questions about the storage, retention, or security of your personal information, or to submit a privacy-related request, please contact:</p>
+        <p><strong>Vedinci Tech LLC</strong><br>
+        <strong>Email:</strong> <a href="mailto:privacy@vedinci.com">privacy@vedinci.com</a></p>
+      </section>
+
+      <section id="rights" aria-labelledby="h-rights">
+        <h2 id="h-rights">8. Your Privacy Rights and Choices</h2>
+        <p>Depending on your location and applicable law, you may have rights concerning personal information we maintain about you, including rights to:</p>
+        <ul>
+          <li>Request access to certain personal information.</li>
+          <li>Request correction of inaccurate information.</li>
+          <li>Request deletion of eligible information.</li>
+          <li>Withdraw consent where applicable.</li>
+          <li>Opt out of marketing communications.</li>
+          <li>Request information about certain uses or disclosures.</li>
+          <li>Exercise additional rights provided under applicable privacy laws.</li>
+        </ul>
+        <p>These rights may be subject to exceptions, identity verification, and other legal requirements.</p>
+        <p>To submit a request, contact us at <a href="mailto:privacy@vedinci.com">privacy@vedinci.com</a>.</p>
+        <p>We will review and respond to requests in accordance with applicable law.</p>
+        <p>Where required, we will provide additional privacy notices, appeal rights, and opt-out mechanisms.</p>
+        <p>We will not unlawfully discriminate against individuals for exercising applicable privacy rights.</p>
+      </section>
+
+      <section id="children" aria-labelledby="h-children">
+        <h2 id="h-children">9. Children's Privacy</h2>
+        <p>DashVu's current website and marketing activities are not directed toward children under 13.</p>
+        <p>We do not knowingly solicit personal information from children under 13 through our waitlist.</p>
+        <p>If we become aware that we have collected such information without any required authorization, we will take appropriate steps in accordance with applicable law.</p>
+        <p>If you believe a child has submitted personal information, please contact <a href="mailto:privacy@vedinci.com">privacy@vedinci.com</a>.</p>
+      </section>
+
+      <section id="third-party" aria-labelledby="h-third-party">
+        <h2 id="h-third-party">10. Third-Party Websites and Services</h2>
+        <p>Our website may contain links to external websites, newsletters, social media platforms, and other third-party services.</p>
+        <p>These services may have independent privacy policies and information-handling practices.</p>
+        <p>Vedinci Tech does not control the privacy practices of independently operated third-party websites.</p>
+        <p>We encourage visitors to review their policies before providing personal information.</p>
+      </section>
+
+      <section id="international" aria-labelledby="h-international">
+        <h2 id="h-international">11. International Visitors</h2>
+        <p>Vedinci Tech is based in the United States.</p>
+        <p>During DashVu's initial prelaunch and product launch, our marketing activities and waitlist are intended for individuals located in the United States.</p>
+        <p>We do not currently actively market DashVu or solicit waitlist registrations from individuals outside the United States.</p>
+        <p>Our website may nevertheless be accessible from other countries. Information processed by our service providers may be stored or processed in the United States or other locations where those providers operate.</p>
+        <p>Where applicable, we will comply with relevant privacy and data protection requirements.</p>
+        <p>If DashVu expands its services or marketing activities internationally, we will review and update this Privacy Policy and implement any additional notices, safeguards, or privacy controls required by applicable law.</p>
+      </section>
+
+      <section id="changes" aria-labelledby="h-changes">
+        <h2 id="h-changes">12. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy to reflect changes in our website, services, data practices, or applicable legal requirements.</p>
+        <p>When we update this policy, we will revise the "Last Updated" date above.</p>
+        <p>Where required by applicable law, we will provide additional notice or seek consent before implementing material changes.</p>
+        <p>We encourage visitors to review this policy periodically.</p>
+      </section>
+
+      <section id="contact" aria-labelledby="h-contact">
+        <h2 id="h-contact">13. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy, our information-handling practices, or your privacy rights, please contact:</p>
+        <div class="contact-card">
+          <dl>
+            <dt>Company</dt>
+            <dd>Vedinci Tech</dd>
+            <dt>Product and Brand</dt>
+            <dd>DashVu</dd>
+            <dt>Legal Business Name</dt>
+            <dd>Vedinci Tech LLC</dd>
+            <dt>Privacy Email</dt>
+            <dd><a href="mailto:privacy@vedinci.com">privacy@vedinci.com</a></dd>
+            <dt>Website</dt>
+            <dd><a href="https://dashvu-preview.netlify.app">https://dashvu-preview.netlify.app</a></dd>
+          </dl>
+        </div>
+        <p style="margin-top: 20px;">We welcome questions about how we handle personal information.</p>
+      </section>
+
+      <section class="commitment" aria-labelledby="h-commitment">
+        <h2 id="h-commitment">Our Commitment</h2>
+        <p>At Vedinci Tech, our mission is to build technology that helps individuals achieve greater clarity, alignment, and control over their daily lives.</p>
+        <p>Through DashVu, we aim to create meaningful experiences that support intentional living and personal growth.</p>
+        <p>We believe trust is earned through transparency, responsible information handling, and respect for individual privacy.</p>
+        <p>We are committed to improving our privacy practices as DashVu develops.</p>
+      </section>
+
+      <div class="back-bottom">
+        <a class="btn" href="https://dashvu-preview.netlify.app/">Back to DashVu</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 Vedinci Tech LLC. DashVu is a product of Vedinci Tech.</span>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://dashvu-preview.netlify.app/">Home</a>
+      <a href="/privacy/" aria-current="page">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
