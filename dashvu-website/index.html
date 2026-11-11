@@ -782,7 +782,8 @@
   @media (max-width: 800px) {
     .price-planned--spacer { display: none; }
     .pricing-section { padding: 96px 24px 112px; }
-    .pricing-grid { grid-template-columns: 1fr; gap: 36px; }
+    .pricing-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+    .price-amount { flex-wrap: wrap; }
     .price-card { padding: 40px 28px; }
     .price-badge { left: 28px; }
     .price-desc { min-height: 0; }
