@@ -95,7 +95,7 @@
     border-radius: 50%;
     background: var(--electric);
     box-shadow: 0 0 10px 2px var(--electric-dim);
-    animation: pulse 2.6s ease-in-out infinite;
+    animation: pulse 2.6s ease-in-out 1;
   }
   @keyframes pulse {
     0%, 100% { opacity: 1; }
@@ -528,7 +528,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: demo-pulse 2.8s ease-in-out infinite;
+    animation: demo-pulse 2.8s ease-in-out 1;
   }
 
   .demo-play svg {
@@ -1066,6 +1066,21 @@
       background: linear-gradient(180deg, transparent, var(--electric-dim), transparent);
     }
     .how-step p { max-width: 420px; }
+  }
+
+  /* ---------- Reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .eyebrow::before,
+    .demo-play { animation: none; }
+    .cta { transition-property: box-shadow; }
+    .price-cta { transition-property: box-shadow, background; }
+    .feature-card { transition-property: border-color, box-shadow; }
+    .cta:hover,
+    .cta:active,
+    .price-cta.secondary:hover,
+    .price-cta.primary:hover,
+    .feature-card:hover { transform: none; }
   }
 </style>
 </head>
