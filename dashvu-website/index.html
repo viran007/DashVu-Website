@@ -565,7 +565,7 @@
   }
 
   .pricing-inner {
-    max-width: 1000px;
+    max-width: 1180px;
     margin: 0 auto;
   }
 
@@ -597,7 +597,7 @@
 
   .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     align-items: stretch;
   }
@@ -770,17 +770,43 @@
     color: rgba(214, 224, 245, 0.58);
   }
 
-  /* Desktop: both cards share row heights so the price, description and CTA rows line up */
+  /* Smart Mirror: flagship card, slightly brighter cyan border, no stronger glow than Premium */
+  .price-card.mirror {
+    border-color: rgba(0, 212, 255, 0.62);
+    background: linear-gradient(160deg, rgba(0, 212, 255, 0.07) 0%, rgba(120, 160, 255, 0.025) 100%);
+    box-shadow: inset 0 1px 0 rgba(0, 212, 255, 0.25);
+  }
+  .price-card.mirror .price-cta.secondary { border-color: rgba(0, 212, 255, 0.6); }
+  .price-amount--tba strong {
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .price-cta-note {
+    margin: -22px 0 28px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(214, 224, 245, 0.58);
+  }
+  /* Desktop: cards share row heights so the price, description and CTA rows line up */
   .price-planned--spacer { visibility: hidden; }
-  @media (min-width: 801px) {
+  @media (min-width: 1025px) {
     @supports (grid-template-rows: subgrid) {
       .pricing-grid { grid-template-rows: repeat(6, auto); row-gap: 0; }
       .price-card { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; }
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     .price-planned--spacer { display: none; }
+    .pricing-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; max-width: 640px; margin: 0 auto; }
+    .price-desc { min-height: 0; }
+  }
+
+  @media (max-width: 800px) {
     .pricing-section { padding: 96px 24px 112px; }
     .pricing-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
     .price-amount { flex-wrap: wrap; }
@@ -1317,7 +1343,7 @@
     <div class="pricing-header">
       <div class="ps-label solution">Pricing</div>
       <h2>Choose how far you want to go.</h2>
-      <p>Start free with DashVu Mobile and build the foundation for a more intentional life. Go further with intelligent, personalized guidance through DashVu Premium, coming soon.</p>
+      <p>Begin your journey with DashVu Mobile, unlock intelligent guidance with Premium, or bring your vision to life with our flagship Smart Mirror.</p>
     </div>
 
     <div class="pricing-grid">
@@ -1380,9 +1406,33 @@
         </div>
       </div>
 
+      <!-- Smart Mirror -->
+      <div class="price-card mirror">
+        <div class="price-badge">Flagship · Coming Soon</div>
+        <h3 class="price-tier">Smart Mirror</h3>
+        <div class="price-amount price-amount--tba">
+          <strong>Pricing to be announced</strong>
+        </div>
+        <p class="price-planned price-planned--spacer" aria-hidden="true">&nbsp;</p>
+        <p class="price-desc">Your future self, reflected in your everyday life. Bring DashVu into your home with a premium interactive mirror that makes daily clarity, intention, and personal growth part of your environment.</p>
+        <a class="price-cta secondary" href="https://omniform1.com/forms/v1/landingPage/6ae8d574714bb4bfe9142237/6ae95354bad6e658489a1ae5">Get Mirror Updates</a>
+
+        <div class="price-features">
+        <p class="price-cta-note">Future hardware launch</p>
+        <div class="price-group">The Mirror Experience</div>
+        <ul class="price-list">
+          <li><div>Premium 43-inch smart mirror</div></li>
+          <li><div>Interactive touchscreen display</div></li>
+          <li><div>Personalized DashVu OS experience</div></li>
+          <li><div>Daily insights, goals and priorities</div></li>
+          <li><div>Designed for intentional living</div></li>
+        </ul>
+        </div>
+      </div>
+
     </div>
 
-    <p class="pricing-note">DashVu Mobile Starter is planned as our first release. Premium features and pricing are subject to change. The DashVu Smart Mirror will be offered separately.</p>
+    <p class="pricing-note">DashVu Mobile Starter is planned as our first release. Premium software and the Smart Mirror are future offerings. Features, availability, and pricing are subject to change. Smart Mirror hardware will be sold separately.</p>
 
   </div>
 </section>
